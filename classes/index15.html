@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="head">hello</h2>
+    <button onclick="addstyle()">click me</button>
+    <button onclick="change_content()">hey click</button>
+    <script>
+        let h1=document.getElementById("head")
+         function change_content(){
+
+            h1.innerHTML="something"
+         }
+            function addstyle(){
+                h1.style.color="red"
+                h1.style.backgroundColor="yellow"
+
+            }
+            
+    </script>
+</body>
+</html>

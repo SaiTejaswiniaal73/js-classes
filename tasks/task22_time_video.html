@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Video with Skip Ad</title>
+    <style>
+      body {
+        background-color:aquamarine;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      #skipbtn {
+        font-size: 30px;
+        border: 10px solid pink;
+        padding: 12px;
+        margin-top: 10px;
+        color: purple;
+        background-color: aqua;
+        font-weight: bolder;
+      }
+
+      #p {
+        font-size: 30px;
+        border: 15px solid pink;
+        color:purple;
+        padding: 20px;
+        border-radius: 50%;
+        margin: 10px;
+        display: inline-block;
+        background-color: aqua;
+        font-weight: bolder;
+      }
+
+      #v1 {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+      }
+
+      @media (max-width: 600px) {
+        #skipbtn {
+          font-size: 20px;
+          padding: 8px;
+          font-weight: bolder;
+        }
+
+        #p {
+          font-size: 20px;
+          padding: 15px;
+          font-weight: bolder;
+        }
+
+        #v1 {
+          max-width: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p id="p"></p>
+    <video id="v1" autoplay controls src=""></video>
+    <button id="skipbtn">Skip Ad</button>
+
+    <script>
+      let i = 5;
+      let timer = document.getElementById("p");
+      let skipButton = document.getElementById("skipbtn");
+      let videoElement = document.getElementById("v1");
+
+      let timerID = setInterval(() => {
+        timer.innerHTML = i--;
+        if (i < 0) {
+          clearInterval(timerID);
+          playVideo();
+        }
+      }, 1000);
+
+      function playVideo() {
+        videoElement.src = "./video.mp4";
+        videoElement.muted = true;
+        videoElement.play();
+        skipButton.style.display = "none";
+        timer.style.display = "none";
+      }
+
+      skipButton.addEventListener("click", () => {
+        clearInterval(timerID);
+        playVideo();
+      });
+    </script>
+  </body>
+</html>

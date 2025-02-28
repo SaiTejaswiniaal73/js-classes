@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changetext()">click me</button>
+    <button onclick="addtext()">add content</button>
+    <button onclick="removechild()">child remove</button>
+
+    <div id="div1">
+        <h1 id="head1">hello</h1>
+        <p id="p1">i am para</p>
+    </div>
+    <script>
+        let x=document.getElementById("head1")
+        console.log(x);
+        console.log(x.innerHTML)
+        x.innerHTML="tejaswini hi"
+        x.style.backgroundColor="orange"
+        let div=document.getElementById(div1)
+
+        function removechild(){
+            // div.remove_child(x)
+            div1.remove()
+        }
+
+
+        function changetext(){
+            x.innerHTML="ALLAMPALLY"
+            x.style.backgroundColor="Green"
+            x.style.color="red"
+        }
+        function addtext()
+        {
+            let y=document.createElement("h2")
+            y.innerHTML="welocome saitejasiwni 22"
+            div1.append(y)
+            
+        }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgba(255, 0, 0, 0.432)
+        }
+    </style>
+</head>
+<body>
+   <button id="click_button" class="button" onclick="college_idcard()" >show college id</button> 
+
+<script>
+    let div1 = document.createElement("div");
+    let logo=document.createElement("img");
+    let college_name=document.createElement("h3")
+    let college_grade1=document.createElement("h6")
+    let college_grade2=document.createElement("h6")
+    let card_type=document.createElement("h5")
+    let college_grade3=document.createElement("img")
+    let student_pic=document.createElement("img")
+    let college_grade4=document.createElement("h6")
+    let college_grade5=document.createElement("h6")
+    let card_name=document.createElement("h5")
+    let roll=document.createElement("p")
+    let roll1=document.createElement("p")
+    let rolll=document.createElement("p")
+    let roll11=document.createElement("p")
+    let roll2=document.createElement("p")
+    let roll3=document.createElement("p")
+    let roll4=document.createElement("p")
+    let roll22=document.createElement("p")
+    let roll33=document.createElement("p")
+    let roll44=document.createElement("p")
+    let principal_sign=document.createElement("p")
+    let principal=document.createElement("p")
+    //main id card box
+    function college_idcard(){
+
+        div1.style.width = "300px";
+        div1.style.height = "430px";
+        div1.style.margin = "auto";
+        div1.style.borderRadius = "20px";
+        div1.style.boxShadow="2px 2px 10px white"
+        div1.style.border="5px solid skyblue"
+        div1.style.backgroundColor="white"
+        document.body.append(div1)
+
+        //1ST LINE ADDING LOGO
+
+        logo.setAttribute(
+            "src","https://www.facultyplus.com/wp-content/uploads/2018/12/SMEC.jpg"
+        )
+        logo.style.height="80px"
+        logo.style.width="80px"
+        // logo.style.borderRadius="4%"
+        logo.style.marginLeft="100px"
+        logo.style.marginTop="5px"
+        div1.append(logo)
+
+        //2ND LINE COLLEGE NAME
+        college_name.innerHTML = "St Martin's Engineering College";
+        college_name.style.marginTop = "-9px";
+        college_name.style.color = "blue";
+        college_name.style.fontWeight = "bold"; 
+        college_name.style.textAlign = "center"
+        div1.append(college_name);
+
+        //3rd line colle afffilated-1
+        college_grade1.innerHTML="AFFILIATED TO JNTUH, APPROVED BY AICTE,"
+        college_grade1.style.marginTop="-18px"
+        college_grade1.style.fontSize="x-small"
+        college_grade1.style.textAlign = "center"
+        div1.append(college_grade1)
+
+        //4th line colle afffilated-2
+        college_grade2.innerHTML="Accrld by NBA & NAAC A+ ISO 9001 2008 CERTIFIED"
+        college_grade2.style.textAlign = "center"
+        college_grade2.style.marginTop="-23px"
+        college_grade2.style.fontSize="x-small"
+        div1.append(college_grade2)
+
+        //5th line card type
+        card_type.innerHTML="STUDENT IDENTITY CARD"
+        card_type.style.backgroundColor="red"
+        card_type.style.color="white"
+        card_type.style.marginTop="-18px"
+        card_type.style.fontSize="small"
+        card_type.style.textAlign = "center";
+        card_type.style.fontWeight = "bold"; 
+        div1.append(card_type)
+
+        //logo 2
+        college_grade3.setAttribute(
+            "src","https://gyaanarth.com/wp-content/uploads/2022/06/SMEC-LOGO.jpg"
+        )
+        college_grade3.style.height="140px"
+        college_grade3.style.width="100px"
+        college_grade3.style.marginLeft="170px"
+        college_grade3.style.marginTop="-15px"
+        div1.append(college_grade3)
+
+        //person pic
+
+        student_pic.setAttribute(
+            "src","https://fileprod.10kcoders.com/student/profile/pic/saitejaswini.aal%40gmail.com/7b1a9d36-c006-4609-95b0-281c057f8c44.jpg?Expires=1737293418&Signature=PRvvN5X6~~W~yHMQG5J8RRmi2e2TJwBc4f6cInaNXUe5gBBPW6zwTpeAE1BiKzHdh2kduqzqqkQXuIk4SBBW0vr1SKk4ttpuaecYK2O6vkwUqPSBMlWjqKQ7h~ia8W206HPqNzeLXvc~vJQaEQdtAA5XqEOL49gy7IJkL6UbJHQdQgQe0YBHknxxrgR0Ssl0MHgoAEhMDbkQHhaOFnL2k5RrYEcOmp1uHn8se-V2tO8od0iVC3TkoLoVZTXduDcXUuUzz7mSNvX46EwhrGpFEgXXI9zK4bA6O-07EEMnrErPIcvATL7tgqtLOubxRRGtGFSfuouvXpp3IybDepcp-g__&Key-Pair-Id=K3JLP03TAXANNO"
+        )
+        student_pic.style.height="157px"
+        student_pic.style.width="130px"
+        student_pic.style.marginLeft="10px"
+        student_pic.style.marginTop="-270px"
+        student_pic.style.border="1px solid black"
+
+        div1.append(student_pic)
+
+        //grade near logo-2
+        college_grade4.innerHTML="UGC Autonomous"
+        college_grade4.style.marginLeft="180px"
+        college_grade4.style.marginTop="-30px"
+        college_grade4.style.fontSize="x-small"
+        div1.append(college_grade4)
+         //grade near logo-2
+        college_grade5.innerHTML="(Govt. of India)"
+        college_grade5.style.marginLeft="185px"
+        college_grade5.style.marginTop="-25px"
+        college_grade5.style.fontSize="x-small"
+        div1.append(college_grade5)
+
+        //name
+    
+        card_name.innerHTML="ALLAMPALLY  SAITEJASWINI"
+        card_name.style.backgroundColor="blue"
+        card_name.style.color="white"
+        card_name.style.marginTop="-10px"
+        card_name.style.fontSize="small"
+        card_name.style.textAlign = "center";
+        card_name.style.fontWeight = "bold"; 
+        div1.append(card_name)
+        //roll etc
+
+        roll.innerHTML="Roll No "
+        roll.style.marginLeft="5px"
+        roll.style.marginTop="-18px"
+        roll.style.fontSize="small"
+        roll.style.textAlign = "left";
+        roll.style.wordSpacing = "10px";
+        roll.style.fontWeight = "bold"; 
+        div1.append(roll)
+
+        rolll.innerHTML=": 19K81A04J3"
+        rolll.style.marginLeft="80px"
+        rolll.style.marginTop="-27px"
+        rolll.style.fontSize="small"
+        rolll.style.textAlign = "left";
+        rolll.style.wordSpacing = "10px";
+        rolll.style.fontWeight = "bold"; 
+        div1.append(rolll)
+
+        roll1.innerHTML="Branch"
+        roll1.style.marginLeft="5px"
+        roll1.style.marginTop="-14px"
+        roll1.style.fontSize="small"
+        roll1.style.textAlign = "left";
+        roll1.style.wordSpacing = "10px";
+        roll1.style.fontWeight = "bold"; 
+        div1.append(roll1)
+
+        roll11.innerHTML=": ECE"
+        roll11.style.marginLeft="80px"
+        roll11.style.marginTop="-27px"
+        roll11.style.fontSize="small"
+        roll11.style.textAlign = "left";
+        roll11.style.wordSpacing = "10px";
+        roll11.style.fontWeight = "bold"; 
+        div1.append(roll11)
+
+        roll2.innerHTML="Batch"
+        roll2.style.marginLeft="5px"
+        roll2.style.marginTop="-14px"
+        roll2.style.fontSize="small"
+        roll2.style.textAlign = "left";
+        roll2.style.wordSpacing = "10px";
+        roll2.style.fontWeight = "bold"; 
+        div1.append(roll2)
+        roll22.innerHTML=" : 2019-2023"
+        roll22.style.marginLeft="80px"
+        roll22.style.marginTop="-27px"
+        roll22.style.fontSize="small"
+        roll22.style.textAlign = "left";
+        roll22.style.wordSpacing = "10px";
+        roll22.style.fontWeight = "bold"; 
+        div1.append(roll22)
+
+        roll3.innerHTML="C/o"
+        roll3.style.marginLeft="5px"
+        roll3.style.marginTop="-14px"
+        roll3.style.fontSize="small"
+        roll3.style.textAlign = "left";
+        roll3.style.wordSpacing = "10px";
+        roll3.style.fontWeight = "bold"; 
+        div1.append(roll3)
+
+        roll33.innerHTML=": GANGADHAR"
+        roll33.style.marginLeft="80px"
+        roll33.style.marginTop="-27px"
+        roll33.style.fontSize="small"
+        roll33.style.textAlign = "left";
+        roll33.style.wordSpacing = "10px";
+        roll33.style.fontWeight = "bold"; 
+        div1.append(roll33)
+
+        roll4.innerHTML="Mobile"
+        roll4.style.marginLeft="5px"
+        roll4.style.marginTop="-14px"
+        roll4.style.fontSize="small"
+        roll4.style.textAlign = "left";
+        roll4.style.wordSpacing = "10px";
+        roll4.style.fontWeight = "bold"; 
+        div1.append(roll4)
+        
+        roll44.innerHTML=": 9876543210"
+        roll44.style.marginLeft="80px"
+        roll44.style.marginTop="-27px"
+        roll44.style.fontSize="small"
+        roll44.style.textAlign = "left";
+        roll44.style.wordSpacing = "10px";
+        roll44.style.fontWeight = "bold"; 
+        div1.append(roll44)
+        principal_sign.innerHTML="A.kumar"
+        principal_sign.style.marginLeft="205px"
+        principal_sign.style.marginTop="-32px"
+        principal_sign.style.fontSize="small"
+        principal_sign.style.textAlign = "left";
+        principal_sign.style.wordSpacing = "10px";
+        principal_sign.style.fontWeight = "bold"; 
+        principal_sign.style.fontFamily="'Lucida Handwriting', cursive"
+        principal_sign.style.color="rgba(0, 128, 0, 0.916)"
+        principal_sign.style.textShadow="1px 1px 1px rgba(0, 128, 0, 0.744);"
+        div1.append(principal_sign)
+
+        principal.innerHTML="Principal"
+        principal.style.marginLeft="205px"
+        principal.style.marginTop="-16px"
+        principal.style.fontSize="small"
+        principal.style.textAlign = "left";
+        principal.style.wordSpacing = "10px";
+        principal.style.fontWeight = "bold"; 
+        div1.append(principal)
+
+
+    }
+    
+</script>
+</body>
+</html>

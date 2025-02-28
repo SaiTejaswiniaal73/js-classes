@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let userinfo={"name":"bhargav","gender":"male","email":"raju@gmail.com","age":"29"};
+      // let userDetails=JSON.parse(localStorage.getItem("data"))||[]
+      // userDetails.push(userinfo)
+      // localStorage.setItem("data",JSON.stringify(userDetails))
+
+      //imp
+      // let userInfo={"name":"bhargav","gender":"male","email":"raju@gmail.com","age":"29"};
+      //
+      // let userDetails=JSON.parse(localStorage.getItem("data"))||[]
+      // // console.log(userDetails)
+      // userDetails.push(userInfo)
+      // localStorage.setItem("data",JSON.stringify(userDetails))
+      // let localStorageData=JSON.parse(localStorage.getItem("data"))
+      // console.log(localStorageData)
+      // localStorageData.map((x)=>{
+      //     console.log(x)
+      // })
+
+      //imp
+
+      // let userInfo={"name":"bhargav","gender":"male","email":"raju@gmail.com","age":"29"};
+
+      // let userDetails=JSON.parse(localStorage.getItem("data"))||[]
+      // userDetails.push(userinfo)
+      // userDetails.push("color"="red")
+      // localStorage.setItem("date",JSON.stringify(userinfo))
+      // localStorage.setItem("date",JSON.stringify(userDetails))
+      let userInfo = {
+        name: "bhargav",
+        gender: "male",
+        email: "raju@gmail.com",
+        age: "29",
+      };
+
+      // ✅ Retrieve existing data from localStorage OR initialize an empty array
+      let userDetails = JSON.parse(localStorage.getItem("data")) || [];
+
+      // ✅ Add userInfo to the userDetails array
+      userDetails.push(userInfo);
+
+      // ✅ Correct way to add a new key-value pair to an array (using an object)
+      userDetails.push({ color: "red" });
+
+      // ✅ Store the updated userDetails array back in localStorage
+      localStorage.setItem("data", JSON.stringify(userDetails));
+
+      // ✅ Retrieve and display the stored data
+      let storedData = JSON.parse(localStorage.getItem("data"));
+      console.log(storedData);
+
+      // console.log(JSON.parse())
+      // localStorage.setItem("name","teja")
+      // sessionStorage.setItem("name","teja")
+      // let obj={"name":"vignesh"}
+      // localStorage.setItem("data",JSON.stringify(obj))
+      // let STR_DATA=localStorage.getItem("data")
+      // console.log(JSON.parse(STR_DATA))
+      // let STR_DATA=localStorage.getItem("data")
+      // console.log(STR_DATA)
+
+      // let arr=[1,2,3,4,5]
+      // localStorage.setItem("data",JSON.stringify(arr))
+      // let try_data=JSON.parse(localStorage.getItem("data"))
+      // console.log(try_data)
+
+      // let obj={"name":"alla","age":22}
+      // localStorage.setItem("data",JSON.stringify(obj))
+      // // console.log(localStorage.setItem("data",JSON.stringify(obj))
+      // // );
+      // let get_data=localStorage.getItem("data")
+      // // console.log(get_data)
+      // let obj_get_data=JSON.parse(get_data)
+      // console.log(obj_get_data);
+
+      // let obj = { "name": "alla", "age": 22 };
+      // localStorage.setItem("data", JSON.stringify(obj));
+      // let store_data = localStorage.getItem("data");
+      // console.log(JSON.parse(store_data));
+      // console.log(JSON.parse(store_data).name);
+      // console.log(JSON.parse(store_data).age);
+    </script>
+  </body>
+</html>

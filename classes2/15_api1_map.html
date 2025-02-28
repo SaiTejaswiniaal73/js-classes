@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let data = fetch("https://jsonplaceholder.typicode.com/posts");
+      console.log(data);
+
+      data
+        .then((x) => x.json())
+        .then((x) => {
+          let res = x;
+          res.map((x) => {
+            console.log(x);
+          });
+        })
+        .catch((x)=>{
+            console.log(x)
+        })
+
+    //   data
+    //     .then((x) => x.json())
+    //     .then((x) => {
+    //       let res = x;
+    //       res.map((x) => {
+    //         console.log(x.title);
+    //       });
+    //     })
+        // .then((x) => console.log(x).catch());
+
+      // let data=fetch("")
+      // data.then((x)=>x.json())
+      // .then((x)=>{
+      //     let res=x;
+      //     res.map((x)=>{
+      //         let poster=document.createElement("img");
+      //         poster.src=x.poster;
+      //         poster.style.height="250px"
+      //         poster.style.height="250px"
+      //         document.body.append(poster)
+
+      //         let title=document.createElement("h1")
+      //         title.innerHTML=x.title
+      //         let gen=document.createElement("h1")
+      //         title.innerHTML=x.gen
+      //         gen.style.backgroundColor="green"
+      //     })
+      //     // console.log(x)
+      //     })
+      // .catch((x)=>{
+      //     console.log(x)
+      // })
+    </script>
+  </body>
+</html>

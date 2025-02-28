@@ -1,0 +1,28 @@
+<button onclick="saveData()">Save Name</button>
+<button onclick="getData()">Get Name</button>
+<button onclick="removeData()">Remove Name</button>
+<button onclick="clearAll()">Clear All</button>
+
+<p id="output"></p>
+
+<script>
+    function saveData() {
+        localStorage.setItem("name", "Tejaswini");
+        alert("Name saved in Local Storage!");
+    }
+
+    function getData() {
+        let name = localStorage.getItem("name");
+        document.getElementById("output").innerText = name ? "Stored Name: " + name : "No name found!";
+    }
+
+    function removeData() {
+        localStorage.removeItem("name");
+        alert("Name removed from Local Storage!");
+    }
+
+    function clearAll() {
+        localStorage.clear();
+        alert("All data cleared from Local Storage!");
+    }
+</script>

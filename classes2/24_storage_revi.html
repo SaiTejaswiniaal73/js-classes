@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click me</button>
+    <form id="form1">
+        <input type="text" placeholder="productname">
+        <input type="text" placeholder="category">
+
+        <input type="submit">
+
+
+    </form>
+    <script>
+        let btn=document.getElementById("btn");
+        let username="teja"
+        let email="teja@gmial.com"
+        let userdetails={name:username,email:email}
+        let form=document.getElementById("form1")
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            let pname=e.target[0].value
+            let pcateg=e.target[1].value
+            let productinfo={name:pname,category:pcateg}
+            localStorage.setItem("productdetail",JSON.stringify(productinfo))
+            let exisiting_array=JSON.parse(localStorage.getItem("productdetails"))
+            let productdetailsarray=exisiting_array||[]
+
+            // let productdetailsarray=[]
+            productdetailsarray.push(productinfo)
+            localStorage.setItem("productdetails",JSON.stringify(productdetailsarray))
+            // console.log(pname,pmail)
+        })
+        
+     
+    </script>
+</body>
+</html>

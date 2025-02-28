@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration_Form</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(
+          to right,
+          rgba(23, 207, 118, 0.516),
+          rgba(94, 197, 94, 0.63)
+        );
+        background: linear-gradient(
+          to right,
+          rgba(112, 160, 234, 0.388),
+          rgba(15, 212, 234, 0.63)
+        );
+      }
+      .form-container {
+        background: rgba(0, 255, 255, 0.363);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        width: fit-content;
+        text-align: center;
+        color: rgb(251, 5, 46);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+      label {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+      input {
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+      }
+      input:focus {
+        outline: none;
+        border-color: #6a11cb;
+        box-shadow: 0 0 8px rgba(106, 17, 203, 0.2);
+      }
+      button {
+        margin-top: 20px;
+        padding: 12px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background 0.3s ease;
+      }
+      button:hover {
+        background: #0056b3;
+        box-shadow: 0 4px 10px rgba(0, 91, 187, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="id_form" class="form-container">
+      <form action="#" id="myform" method="POST" enctype="multipart/form-data">
+        <h2 style="color: rgb(242, 147, 163); background-color: aqua">
+          Register to get your idcard
+        </h2>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="A.Sai TejaSwini"
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="tejaswini.aal@gmail.com"
+        />
+
+        <label for="phone_number"> Phone Number: </label>
+        <input
+          type="tel"
+          id="phone_number"
+          name="phone_number"
+          placeholder="9876543210"
+        /><br /><br />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Tejs@20All$"
+        />
+
+        <label for="image">Upload Image:</label>
+        <input
+          type="text"
+          id="image"
+          name="image"
+          accept="image/*"
+          placeholder="Provide image URL"
+        />
+
+        <button
+          style="
+            background-color: rgb(247, 8, 195);
+            color: aqua;
+            font-size: x-large;
+          "
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <script>
+      let sub = document.forms;
+      if (sub.length > 0) {
+        sub[0].addEventListener("submit", (event) => {
+          event.preventDefault();
+          let form = event.target;
+          let obj = {
+            name: form[0].value,
+            email: form[1].value,
+            phone_number: form[2].value,
+            password: form[3].value,
+            image: form[4].value,
+          };
+          let existingData = JSON.parse(localStorage.getItem("users")) || [];
+
+          let emailExists = existingData.some(
+            (user) => user.email === obj.email
+          );
+          let phoneExists = existingData.some(
+            (user) => user.phone_number === obj.phone_number
+          );
+
+          if (emailExists) {
+            alert(
+              "This email is already registered. Please use a different email."
+            );
+            return;
+          }
+          if (phoneExists) {
+            alert(
+              "This phone number is already registered. Please use a different phone number."
+            );
+            return;
+          }
+
+          existingData.push(obj);
+          localStorage.setItem("users", JSON.stringify(existingData));
+
+          let div = document.createElement("div");
+          let h1 = document.createElement("h1");
+          let h2 = document.createElement("h3");
+          let h3 = document.createElement("h3");
+          let img = document.createElement("img");
+          div.style.width = "fit-content";
+          div.style.heigh="200px"
+          div.style.padding = "10px";
+          div.style.border = "2px solid black";
+          div.style.marginTop = "50px";
+          div.style.background = "linear-gradient(to right, green, aqua)";
+
+
+
+          h1.innerHTML = obj.name;
+          h2.innerHTML = obj.email;
+          h3.innerHTML = obj.phone_number;
+          img.setAttribute("src", obj.image);
+          img.style.width = "200px";
+          div.append(h1, h2, h3, img);
+          document.body.append(div);
+          document.getElementById("myform").reset();
+        });
+      } else {
+        console.error("No forms found in the document.");
+      }
+    </script>
+  </body>
+</html>

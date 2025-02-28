@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+h1{
+    color: red;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    
+
+}
+body{
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+button{
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 20%;
+    border-color: transparent;
+    border-radius: 25%;
+    background-color: red;
+    text-align: center; 
+    padding: 5px;
+    color:black;
+    font-style:italic;
+    font-weight: bolder;
+    font-size: larger;
+}
+.md div{
+    padding: 0.2vw;
+    margin-top: 10px;
+
+   
+}
+input{
+    border-color: transparent;
+    background-color:rgba(7, 180, 13, 0.975);
+    height: 50px;
+    width:250px;
+    padding: 10px;
+    border-radius: 10%;
+    font-style:italic;
+    font-weight: bolder;
+    font-size: larger;
+    margin-left: 2px;
+    
+}
+.md {
+    width: 350px;
+    height:400px;
+    /* margin-left: 20%; */
+    margin-right: 20PX;
+    border: 2px solid black;
+    padding: 25px;
+
+    background-color;
+}
+button:hover{
+    background-color:greenyellow;
+}
+button:active{
+    background-color: rgba(7, 241, 7, 0.644);
+
+}
+
+    </style>
+</head>
+<body>  
+    
+    <div class="md">
+        <h1 id="dis">CALCULATOR</h1>
+        <input type="text" id="display">
+        
+        <div>
+            <button onclick="del()">DEL</button>  
+            <button value="%" onclick="calc(event)">%</button>
+            <button value="/" onclick="calc(event)">/</button>
+            <button onclick="allclear(event)">AC</button>
+            
+        </div>
+        <div>
+            <button value="7" onclick="calc(event)">7</button>
+            <button value="8" onclick="calc(event)">8</button>
+            <button value="9" onclick="calc(event)">9</button>
+            <button value="*" onclick="calc(event)">X</button>        
+        </div>
+        <div>
+            <button value="4" onclick="calc(event)">4</button>
+            <button value="5" onclick="calc(event)">5</button>
+            <button value="6" onclick="calc(event)">6</button>
+            <button value="-" onclick="calc(event)">-</button>   
+        </div>
+        <div>
+            <button value="1" onclick="calc(event)">1</button>
+            <button value="2" onclick="calc(event)">2</button>
+            <button value="3" onclick="calc(event)">3</button>
+            <button value="+" onclick="calc(event)">+</button>
+        </div>
+        <div>
+            <button value="0" onclick="calc(event)">0</button>
+            <button value="0" onclick="calc(event)">00</button>
+            <button value="." onclick="calc(event)">.</button>
+            <button onclick="calculate()">=</button>
+            
+            
+        </div>
+    </div>
+    <script>
+         let display = document.getElementById("display");
+
+        function calc(event) {
+            let value = event.target.value;
+            if ("+-*/%.".includes(value) && "+-*/%.".includes(display.value.slice(-1))) return;  
+            display.value += value;
+        }
+
+        function calculate() {
+            try {
+                display.value = new Function("return " + display.value)();
+            } catch {
+                display.value = "Error";
+            }
+        }
+
+        function del() {
+            display.value = display.value.slice(0, -1);
+        }
+
+        function allclear() {
+            display.value = "";
+        }
+
+
+    </script>
+</body>
+</html>

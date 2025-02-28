@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function delayoperation(){
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (true){
+                        resolve("hello")
+                        
+                    }
+                    else{
+                        reject("hey reject")
+                    }
+                    
+                }, 2500);
+            })
+
+
+        }
+        // async function handledealeysoperation() {
+        //     let x=delayoperation()
+        //     console.log(x)
+            
+        // }
+        async function handledealeysoperation() {
+            let x= await delayoperation()
+            console.log(x)
+
+            let y=await delayoperation()
+            console.log(y)
+            
+        }
+        
+        handledealeysoperation()
+    </script>
+</body>
+</html>

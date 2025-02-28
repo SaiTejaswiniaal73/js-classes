@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="my_form">
+    <input type="text" name="username" placeholder="Username"/><br><br>
+    <input type="email" name="email" placeholder="Email"/><br><br>
+    <input type="submit" value="Submit"/>
+  </form>
+  <h1 id="h1"></h1>
+
+  <script>
+    let form = document.getElementById("my_form");
+    let h1 = document.getElementById("h1");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      // Accessing using the names for clarity:
+      const username = e.target.elements.username.value;
+      const email = e.target.elements.email.value;
+      console.log(username, email);
+      h1.innerHTML = "Form submitted";
+    });
+  </script>
+</body>
+</html>

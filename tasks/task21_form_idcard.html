@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./task21_css">
+</head>
+<body>
+    <div id="form_div" class="div1">
+            <form id="id_form" method="post">
+                <h1>Fill the form to get your ID card</h1>
+
+                <label for="name"> Name:</label>
+                <input type="text" id="name" name="name" required placeholder="A.Sai TejaSwini"/><br/><br/>
+
+            
+                <label for="mail"> Email: </label>
+                <input type="email" id="mail" name="email" required placeholder="tejaswini.aal@gmail.com"><br/><br/>
+
+                <!-- <label for="phone_number"> Phone Number: </label>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="9876543210"><br/><br/>
+
+                <label for="Password"> Password: </label>
+                <input type="password" id="Password" name="password" placeholder="Tejs@20All$"><br/><br/>
+
+                <label for="image"> Image: </label>
+                <input type="file" id="image" name="image" /><br /><br /> -->
+
+                <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        let form=document.getElementById("id_form")
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault()
+            console.log(e.target[0].value,e.target[0].value)
+            let name=e.target[0].value
+            let email=e.target[1].value
+            // let Phone_Number=e.target[0].value
+            // let password=e.target[0].value
+            // let image=e.target[0].value
+            let user_id_details={username:name,email:email}
+            localStorage.setItem("userinfo",JSON.stringify(user_id_details))
+
+            let existing_data=localStorage.getItem("userinfo")
+            let parseddata=JSON.parse(existing_data)
+            console.log(parseddata)
+            // console.log(existing_data)
+
+            let id_card=document.createElement("div")
+            let user_name=document.createElement("h1")
+            let user_email=document.createElement("p")
+            user_name.innerHTML=parseddata.username
+            user_email.innerHTML=parseddata.email
+            id_card.append(user_name,user_email)
+            document.body.append(id_card)
+        })
+
+    </script>
+    
+    <!-- <script src="./task21_form_idcard.js"></script> -->
+</body>
+</html>

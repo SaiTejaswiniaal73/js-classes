@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     let pr=new Promise((res,rej)=>
+    // {
+    //     if(true){
+    //         res("resolved")
+    //     }
+    //     else
+    //     {
+    //         res("rejected")
+    //     }
+
+    // })
+    // pr.then((x)=>{console.log(x)}).catch((x)=>{console.log(x)})
+
+    // // let pr=new Promise()
+    // // console.log(pr)
+    let bike_is_there=true;
+    let pr1=new Promise((res,rej)=>{
+
+        if(bike_is_there)
+    {
+        res("i will come")
+    }
+    else{
+        ("i will not come")
+    }
+
+    })
+    // console.log(pr1)
+
+    pr1.then((x)=>{console.log(x)})
+    .catch((x)=>{console.log(x)})
+
+    //c contaion promse result x can be any where 
+
+
+    </script>
+</body>
+</html>

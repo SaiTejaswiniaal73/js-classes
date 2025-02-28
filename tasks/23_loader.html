@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Loader</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid lightgray;
+            border-top: 5px solid blue;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 50px auto;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        #content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader"></div>
+    <div id="content">
+        <h1>Welcome!</h1>
+        <p>Content loaded successfully.</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            location.assign("./15_api_langauges.html")
+        }, 3000); // 3 seconds
+    </script>
+
+</body>
+</html>

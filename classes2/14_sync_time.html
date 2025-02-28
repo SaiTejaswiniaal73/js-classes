@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+    #skipbtn{
+        font-size: 40px;
+        border: 2px solid green;
+        display: inline-block;
+        padding: 12px;
+        margin:auto;
+        margin-left:300px;
+    }
+    #p{
+        font-size: 20px;
+        border: 2px solid red;
+        color: green;
+        display: inline-block;
+        padding: 30px;
+        border-radius: 100%;
+        margin:auto;
+        margin-left:300px;
+        
+    }
+    #v1
+    {
+        margin:auto;
+        margin-left:200px;
+    }
+</style>
+</head>
+<body>
+    <p id="p"></p><br>
+    <video id="v1" autoplay controls src="" 
+    height="300" width="300"></video>><br><br>
+    <button id="skipbtn">skip id</button>
+    
+    <script>
+        let i = 5;
+        let timer = document.getElementById("p");
+        let skipbutton=document.getElementById("skipbtn")
+        let videoElement = document.getElementById("v1"); 
+    
+        let timerID = setInterval(() => {
+            timer.innerHTML =i--
+            if (i < 0) {
+                clearInterval(timerID);
+                play_video()
+                // videoElement.src = "./video.mp4"; 
+            }
+        }, 1000);
+
+        function play_video(){
+            videoElement.src = "./video.mp4"; 
+            skipbutton.style.display="none"
+            timer.style.display="none"
+                }
+        skipbutton.addEventListener("click",()=>{
+            clearInterval(timerID)
+            play_video()
+        })
+
+
+    </script>
+</body>
+</html>

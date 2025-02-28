@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+   
+    <form>
+        <input id="ip1" type="text"/>
+        <p id="p1"></p>
+    </form>
+    <script>
+       
+            let ip1=document.getElementById("ip1");
+            let text=document.getElementById("p1")
+
+            ip1.addEventListener("focus",(e)=>{
+                e.target.style.backgroundColor="red"
+                e.target.style.border="2px solid green"
+                        })
+            ip1.addEventListener("blur",(e)=>{
+                e.target.style.backgroundColor="aqua"
+                e.target.style.border="2px solid pink"
+                        })
+            ip1.addEventListener("change",(e)=>{
+                text.innerHTML=e.target.value
+
+            })
+            ip1.addEventListener("change",(e)=>{
+                e.preventDefault()
+                text.innerHTML=e.target.value
+
+            })
+            ip1.addEventListener("input",(e)=>{
+                e.preventDefault()
+                text.innerText=e.target.value
+            })
+            ip1.addEventListener("keydown",(e)=>{
+                e.target.style.backgroundColor="red"
+        
+            })
+            ip1.addEventListener("keyup",(e)=>{
+                e.target.style.backgroundColor="green"
+        
+            })
+            // ip1.addEventListener("change",()=>{
+        //     e.preventDefault()
+        //     text.innerText=e.target.value
+        // })
+        //  ip1.addEventListener("focus",(e)=>{
+        //     e.target.style.backgroundColor='orange'
+        //     e.target.style.border="2px solid red"
+        // })
+        // ip1.addEventListener("blur",(e)=>{
+        //     e.target.style.backgroundColor='green'
+        //     e.target.style.border="pink"
+        // })
+        // ip1.addEventListener("keydown",(e)=>{
+        //     e.target.style.backgroundColor='red'
+        // })
+        // ip1.addEventListener("keyup",(e)=>{
+        //     e.target.style.backgroundColor='green'
+        // })
+    </script>
+</body>
+</html>

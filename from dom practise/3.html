@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="add_div1()">click to get div1</button>
+    <button onclick="sub_div1()">click to remove div1</button>
+    <script>
+
+       
+
+        function add_div1(){
+            let div1=document.createElement("div")
+            div1.style.height="125px"
+            div1.style.width="125px"
+            div1.style.border="2px solid red"
+            let image=document.createElement("img")
+                image.setAttribute(
+                 "src",
+                 "https://th.bing.com/th/id/OIP.c70J7yZ4aoxPAm-lnsblUQHaEK?rs=1&pid=ImgDetMain"
+            )
+            image.style.height="25%"
+             image.style.width="30%"
+            // document.body.append(div1)
+            div1.append(image)
+            document.body.appendChild(div1,"hi","hello")
+
+
+    
+        }
+        // function sub_div1(){
+        //     document.body.remove(add_div1)
+        // }
+    </script>
+</body>
+</html>

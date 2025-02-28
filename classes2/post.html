@@ -1,0 +1,59 @@
+<!-- <!-- HTTP REQUEST METHODS
+    1.GET
+    2.post
+    3.put/patch
+    4.delete -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">click</button>
+    <button id="btn1">click1</button>
+    <p id="p1"></p>
+
+    <script>
+      let button = document.getElementById("btn");
+      let getButton = document.getElementById("btn1");
+      let mesg=document.getElementById("p1")
+      button.addEventListener("click", () => {
+        getButton.addEventListener("click",()=>{})
+        let data = {
+          name: "tejaswini",
+          city: "hyd",
+          email: "sai.aal@gmail.com",
+        };
+        let url = "https://679ba6ae33d316846324a4ae.mockapi.io/practise";
+        let req = fetch(url, {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        req.then((x)=>{
+            console.log(x.status);
+            if(x.status==201)
+            {
+                mesg.innerHTML="data successfullay uploaded"
+            }
+            else if(x.status==404){
+                mesg.innerHTML="data not found"
+            }
+            else{
+                mesg.innerHTML="somwthing"
+            }
+            return x.json()
+        })
+        .then((x)=>console.log(x))
+        .catch((error) => {
+            mesg.innerHTML = " Error uploading data!";
+            console.log("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html> 
+
+

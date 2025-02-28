@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Vowels</title>
+    
+</head>
+<body>
+    <h1>Remove Vowels from a String</h1>
+    <label for="userInput">Enter a string:</label><br>
+    <input type="text" id="userInput" placeholder="Type something here"><br>
+    <button onclick="processString()">Remove Vowels</button>
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        function removeVowels(inputString) {
+            const vowels = "aeiouAEIOU";
+            let result = "";
+            for (let char of inputString) {
+                if (!vowels.includes(char)) {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        function processString() {
+            const userInput = document.getElementById("userInput").value;
+            if (!userInput.trim()) {
+                alert("Please enter a valid string!");
+                return;
+            }
+            const result = removeVowels(userInput);
+            document.getElementById("result").style.display = "block";
+            document.getElementById("result").textContent = "String without vowels: " + result;
+        }
+    </script>
+</body>
+</html>

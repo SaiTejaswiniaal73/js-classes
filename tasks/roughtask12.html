@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./task21_css" />
+  </head>
+  <body>
+    <div id="form_div" class="div1">
+      <form id="id_form" method="post">
+        <h1>Fill the form to get your ID card</h1>
+
+        <label for="name"> Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="A.Sai TejaSwini"
+        /><br /><br />
+
+        <label for="mail"> Email: </label>
+        <input
+          type="email"
+          id="mail"
+          name="email"
+          required
+          placeholder="tejaswini.aal@gmail.com"
+        /><br /><br />
+
+        <label for="phone_number"> Phone Number: </label>
+                <input type="tel" id="phone_number" name="phone_number" placeholder="9876543210"><br/><br/>
+
+                <label for="Password"> Password: </label>
+                <input type="password" id="Password" name="password" placeholder="Tejs@20All$"><br/><br/>
+
+                <label for="image"> Image: </label>
+                <input type="file" id="image" name="image" /><br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      let form = document.getElementById("id_form");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(e.target[0].value, e.target[1].value);
+    let name = e.target[0].value;
+    let email = e.target[1].value;
+    let userdetails = { username: name, email: email };
+    let existing_data = JSON.parse(localStorage.getItem("userinfo")) || [];
+    existing_data.push(userdetails);
+    let stringfydata = JSON.stringify(existing_data);
+    localStorage.setItem("userinfo", stringfydata);
+
+    // Clear existing cards to avoid duplication
+    document.querySelectorAll(".card").forEach(card => card.remove());
+
+    // Display new cards
+    for (let i = 0; i < existing_data.length; i++) {
+        let user = existing_data[i];
+        let card = document.createElement("div");
+        card.classList.add("card");
+        let y = document.createElement("h1");
+        let z = document.createElement("p");
+        card.style.backgroundColor = "blue";
+        card.style.color = "white";
+        document.body.append(card);
+        card.append(y, z);
+
+        y.innerHTML = user.username;
+        z.innerHTML = user.email;
+    }
+});
+
+    </script>
+
+    <!-- <script src="./task21_form_idcard.js"></script> -->
+  </body>
+</html>

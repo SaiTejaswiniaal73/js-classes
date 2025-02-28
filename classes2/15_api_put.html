@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        let data={
+            // name:"vignes",
+            city:"sangared",
+            // email:"vignsh@gmail.com"
+        }
+      let api="https://679ba6ae33d316846324a4ae.mockapi.io/practise/3"
+      let apiCall=fetch(api,
+      {"method":"PUT",
+      "headers":{"Content-type":"application/json"},
+      body:JSON.stringify(data)})
+
+    </script>
+  </body>
+</html>
+
+<!-- imp
+let apiCall=fetch(api,
+{method:"PUT",
+headers:{"content-type":applicatio/json},
+body:JSON.stringify(data)}) -->
+

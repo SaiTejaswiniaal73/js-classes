@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration_Form</title>
+  </head>
+  <body>
+    <div id="form1" class="form-container">
+      <form action="#" id="myform" method="POST" enctype="multipart/form-data">
+        <h2>Register</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="A.Sai TejaSwini" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="tejaswini.aal@gmail.com" />
+
+        <label for="phone_number"> Phone Number: </label>
+        <input type="tel" id="phone_number" name="phone_number" placeholder="9876543210" /><br /><br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Tejs@20All$" />
+
+        <label for="image">Upload Image:</label>
+        <input type="text" id="image" name="image" accept="image/*" placeholder="Provide image URL" />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      let sub = document.forms;
+      if (sub.length > 0) {
+        sub[0].addEventListener("submit", (event) => {
+          event.preventDefault();
+          let form = event.target;
+          let obj = {
+            name: form[0].value,
+            email: form[1].value,
+            phone_number: form[2].value,
+            password: form[3].value,
+            image: form[4].value,
+          };
+          let existingData = JSON.parse(localStorage.getItem("users")) || [];
+          
+          let emailExists = existingData.some(user => user.email === obj.email);
+          let phoneExists = existingData.some(user => user.phone_number === obj.phone_number);
+          
+          if (emailExists) {
+            alert("This email is already registered. Please use a different email.");
+            return;
+          }
+          if (phoneExists) {
+            alert("This phone number is already registered. Please use a different phone number.");
+            return;
+          }
+          
+          existingData.push(obj);
+          localStorage.setItem("users", JSON.stringify(existingData));
+          
+          let div = document.createElement("div");
+          let h1 = document.createElement("h1");
+          let h2 = document.createElement("h3");
+          let h3 = document.createElement("h3");
+          let img = document.createElement("img");
+          div.style.width = "fit-content";
+          div.style.padding = "10px";
+          div.style.margin="auto"
+          div.style.border = "2px solid black";
+          div.style.background = "aquq";
+          
+          h1.innerHTML = obj.name;
+          h2.innerHTML = obj.email;
+          h3.innerHTML = obj.phone_number;
+          img.setAttribute("src", obj.image);
+          img.style.width = "fit-content";
+          div.append(h1, h2, h3, img);
+          document.body.append(div);
+          document.getElementById("myform").reset();
+        });
+      } else {
+        console.error("No forms found in the document.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function asy1(cbf) {
+        setTimeout(() => {
+          console.log("i am as1");
+          cbf();
+        }, 1500);
+      }
+      function asy2(cbf) {
+        setTimeout(() => {
+          console.log("i am as2");
+          cbf();
+        }, 100);
+      }
+      function asy3(cbf) {
+        setTimeout(() => {
+          console.log("i am as3");
+          cbf();
+        }, 1200);
+      }
+      // asy1(() => {
+      //   return asy2(() => {
+      //     return asy3();
+      //   });
+      // });
+
+      asy1(() => {
+        return asy2(() => {
+          return asy3(() => {
+            console.log("alll done")
+          });
+        });
+      });
+
+      
+    </script>
+  </body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function async1() {
+        setTimeout(() => {
+          console.log("i am asnc 1");
+        }, 1500);
+      }
+      function async2() {
+        
+        setTimeout(() => {
+          console.log("i am asnc 1");
+          cbf();
+        }, 1100);
+      }
+      function async3() {
+        
+        setTimeout(() => {
+          console.log("i am asnc 1");
+          cbf();
+        }, 1400);
+      }
+      async1(() => async2(() => async3()));
+      async1();
+      async2();
+      async3();
+    </script>
+  </body>
+</html> -->

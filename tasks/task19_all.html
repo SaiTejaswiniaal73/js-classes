@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All In One</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #388e3c;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #otp {
+            color: antiquewhite;
+        }
+    </style>
+    <script src="./task19_num_math_methods.js"></script>
+</head>
+<body>
+
+    <!-- Even or Odd Checker -->
+    <h1>Check if a number is Even or Odd</h1>
+    <input type="number" id="number_input" placeholder="Enter a number">
+    <button id="checkButton">Check</button>
+    <h4 id="result"></h4>
+
+    <!-- Form -->
+    <form id="my_form">
+        <input type="text" name="username" placeholder="Username"/><br><br>
+        <input type="email" name="email" placeholder="Email"/><br><br>
+        <input type="submit" value="Submit"/>
+    </form>
+    <h1 id="h1"></h1>
+
+    <!-- OTP Generator -->
+    <button id="btn">Click to Generate OTP</button>
+    <h1 id="otp"></h1>
+
+    <script>
+        // Even or Odd Functionality
+        let btn = document.getElementById("checkButton");
+        let numberInput = document.getElementById("number_input");
+        let resultDisplay = document.getElementById("result");
+        btn.addEventListener("click",function(){
+            let num= parseInt(numberInput.value);  
+            if(isNaN(num)){
+                resultDisplay.innerHTML = "Please enter a valid number!";
+                resultDisplay.style.color = "red";
+                return;
+            }
+            else if (num % 2 === 0) {
+                resultDisplay.innerHTML = `${num} is Even.`;
+                resultDisplay.style.color = "green";
+            } else {
+                resultDisplay.innerHTML = `${num} is Odd.`;
+                resultDisplay.style.color = "red";
+            }
+        });
+
+        // Form Submit Functionality
+        let form = document.getElementById("my_form");
+        let h1 = document.getElementById("h1");
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const username = e.target.elements.username.value;
+            const email = e.target.elements.email.value;
+            console.log(username, email);
+            h1.innerHTML = "Form submitted";
+        });
+
+        // OTP Generation and Background Color Change
+        let otpBtn = document.getElementById("btn");
+        let otpDisplay = document.getElementById("otp");
+        otpBtn.addEventListener("click", function() {
+            let x = Math.random() * 1000000;
+            let otp = Math.floor(x);
+            let clr;
+            if (otp < 100000) {
+                clr = otp + 100000;
+            } else clr = otp;
+            document.body.style.backgroundColor = `#${clr}`;
+            otpDisplay.innerHTML = clr;
+        });
+    </script>
+
+</body>
+</html>

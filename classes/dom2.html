@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+    <h1 class="class1" id="unique1">this is  one</h1>
+    <p class="class1" id="unique2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa tempore vero dolorem expedita illum earum perferendis fugit ut praesentium nulla repellat, laborum sit deserunt consequatur corporis consectetur officia! Ut, rem!</p>
+    <p class="class1" id="unique3">okay</p>
+</body> -->
+<!-- <script>
+    let x1=document.getElementsByClassName("class1")
+    let x2=document.getElementById("unique2")
+    let x3=document.getElementsByTagName("p")
+
+    // console.log(x1[0].innerHTML)
+    x1[1].innerHTML="hello her the change"
+    x1[0].innerText="<i>hello</i> hello her the change"
+    x1[2].innerHTML="<i>hello</i> hello her the change"
+</script> -->
+<body>
+<h1 id="name_change">allampally samyuktha</h1>
+<button onclick="changename()">click to view name change</button>
+<button onclick="colourname()">click to view name  colour change</button>
+    <script>
+        let h1=document.getElementById("name_change")
+        function changename(){
+            h1.innerHTML="sakinala samyuktha"
+        }
+        function colourname(){
+            h1.style.color="green"
+            h1.style.backgroundColor="red"
+        }
+    </script>
+</body>
+
+</html>

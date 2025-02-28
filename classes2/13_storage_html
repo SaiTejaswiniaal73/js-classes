@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">click</button>
+    <button id="btn1">replace1</button>
+    <script>
+      let username = "teja";
+      let email = "alla@gmail.com";
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        // let x=localStorage.getItem("name")
+        // console.log(x)
+        // text.innerHTML=x
+        // document.body.append(text)
+        // document.write(x)
+        localStorage.setItem("name",username)
+        localStorage.setItem("email", email);
+        let userinfo = { username: username, email: email };
+        localStorage.setItem("userdetails",userinfo);
+        localStorage.removeItem("email")
+      });
+    </script>
+  </body>
+</html>

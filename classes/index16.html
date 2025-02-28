@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul class="first">
+        <li>first 1</li>
+        <li>first2 </li>
+        <li>first 3</li>
+    </ul>
+    <div>
+        <ul class="first">
+            <li id="li1" onclick="change()">secound 1st</li>
+            <li>sec 2nd</li>
+
+        </ul>
+    </div> -->
+    <button id="addDiv" onclick="make()">click me</button>
+    <button id="addDiv" onclick="remove()">remove</button>
+    <button id="addDiv" onclick="removeall()">removeall</button>
+    
+    <script>
+        let div1=document.createElement("div");
+        let image=document.createElement("img");
+        let title=document.createElement("tit")
+        function make(){
+            div1.style.height="300px"
+            div1.style.width="300px"
+            div1.style.border="3px solid green"
+            document.body.append(div1,"hi"," ","hello");
+            document.body.appendChild(div1);   
+            image.setAttribute("src","https://img.freepik.com/premium-vector/beautiful-landscape-nature-background-images-free-download-freepik-vector_1305309-83.jpg")
+            image.style.height="50%"
+            image.style.width="50%"
+            div1.append(image)
+            title.innerHTML="cloud"
+            div1.append(title)
+        }
+        // }
+        // function remove(){
+        //     div1.removeChild(title)
+        // }
+        // function removeall(){
+        //     div1.remove(div1)
+           
+        // }
+        // let image=document.createElement("div");
+
+        // let li=document.getElementById("li1")
+        // function change(){
+        // li.style.color="green"
+        // li.style.backgroundColor="red"
+        // li.style.fontSize="10px"
+        // li.style.border="3px solid green"
+        // }
+        // let div1=document.createElement("div");
+        // div1.style.height="10px"
+        // div1.style.width="100px"
+        // div1.style.border="3px solid green"
+
+        // document.body.append(div1);
+        
+        // let ele=document.querySelector(".first")
+        // console.log(ele)
+        // let ele1=document.querySelector("div li")
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ip = ["html", "css", "JAVASCRIPT", "react", "ANGULAR"];
+
+function transformCase(word) {
+  if (word === word.toUpperCase()) {
+    return word.toLowerCase();
+  } else if (word === word.toLowerCase()) {
+    return word.toUpperCase();
+  }
+  return word;
+}
+
+const op = new Array(ip.length);
+for (let i = 0; i < ip.length; i++) {
+  op[i] = transformCase(ip[i]);
+}
+
+console.log(op);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <button id="btn1">replace1</button>
+    <script>
+        let username="tejaswini"
+        let email="teja@gmail.com"
+        let btn=document.getElementById("btn")
+        btn.addEventListener("click", ()=>{
+            
+        //     localStorage.setItem("name",username)
+        //     localStorage.setItem("email",email)
+        
+        // console.log(localStorage.getItem("name"));  // Output: tejaswini
+        // console.log(localStorage.getItem("email")); // Output: teja@gmail.com
+
+
+
+            // window.open("https://www.amazon.in/")
+            // window.close()
+            // console.log(navigator.platform)
+            // location.reload()
+            // history.forward()
+            // history.back()
+        })
+          btn.addEventListener("click", () => {
+            location.assign("https://www.amazon.in/")
+        })
+        // let btn1=document.getElementById("btn1")
+        // btn1.addEventListener("click", () => {
+        //     location.replace("https://www.amazon.in/")
+        // })
+    //    window.alert("hello js")
+    //    window.prompt("enter the num:")
+    //    window.confirm("r u okay")
+    //    let op=location.origin
+    //    console.log(op)
+    //    let op1=location.href
+    //    console.log(op1)
+    //    let op2=location.host
+    //    console.log(op2)
+    //    let op3=location.port
+    //    console.log(op3)
+    //    let op4=location.assign
+    //    console.log(op4)
+
+    
+
+    </script>
+</body>
+</html>
+<!-- another do -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click me</button>
+    <script>
+    //   window.alert("hello javascript")
+    //   window.prompt()
+    //   let op=window.confirm("are u sure to want to exit")
+    //   console.log(op)
+    //   let op1=location.origin;
+    //   console.log(op1);
+    let username = "tejasiwni";
+      let email = "swini@gmail.com";
+      let btn = document.getElementById("btn");
+      let text=document.createElement("p")
+    // let btn = document.getElementById("btn");
+    btn.addEventListener("click", () => {
+        // location.assign("https://www.amazon.in/")
+        // location.replace("https://www.amazon.in/")
+        // window.open("https://www.amazon.in/")
+        // window.close()
+        // console.log(navigator.appVersion)
+        location.reload()
+        // history.back()
+        // history.forward()
+
+        sessionStorage.setItem("name",username);
+        localStorage.setItem("email",email);
+        localStorage.setItem("name",username);
+
+        // localStorage.removeItem("email")
+
+        let userInfo = { username: username, user_email: email };
+
+        let x=localStorage.getItem("email");
+        text.innerHTML=x;
+        document.body.append(text)
+        // localStorage.setItem("userDetails",userInfo);
+      });
+    </script>
+    
+</body>
+</html> -->

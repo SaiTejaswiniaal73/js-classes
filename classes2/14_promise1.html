@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function backend(){
+             return   new promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(true){
+                        resolve("hey backend")
+                    }
+                    else{
+                        reject("not backend")
+                    }
+                    
+                },1500);
+            })
+        }
+        function frontend(){
+             return  new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(true){
+                        resolve("hey frontend")
+                    }
+                    else{
+                        reject("not frontend")
+                    }
+                    
+                    
+                },1100);
+            })
+        }
+        function fullstack(){
+             return  new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if(true){
+                        resolve("hey fullstack")
+                    }
+                    else{
+                        reject("not fullstack")
+                    }
+                    
+                },1300);
+            })
+        }
+      frontend()
+      .then((x)=>{
+        console.log(x);
+        return backend()
+    })
+      .then((x)=>{
+        console.log(x)
+        return fullstack();
+      })
+      .then ((x)=>{
+        console.log(x)
+      })
+    </script>
+    
+</body>
+</html>

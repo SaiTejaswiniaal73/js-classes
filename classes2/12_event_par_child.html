@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button  id="btn" onclick="btn()">click</button>
+    <ul id="u">
+        <li id="l1">list1</li>
+        <li  id="l2">list2</li>
+        <li  id="l3">list3</li>
+    </ul>
+    <p id="text"></p>
+    <script>
+        let btn=document.getElementById("btn")
+        let parent=document.getElementById("u")
+        let ch1=document.getElementById("l1")
+        let ch2=document.getElementById("l2")
+        let ch3=document.getElementById("l3")
+        let show=document.getElementById("text")
+
+        btn.addEventListener("click", () => {
+            ch1.style.backgroundColor="red"
+            // location.assign("https://www.amazon.in/")
+        })
+
+        ch1.addEventListener("click",(ch1)=>{
+            ch1.target.style.backgroundColor="green"
+        })
+        // ch2.addEventListener("click",(e)=>{
+        //     e.target.style.backgroundColor = "red"; // Fixed spelling
+        // })
+
+        // ch3.addEventListener("click",(e)=>{
+        //     e.target.style.backgroundColor="pink"
+        // })
+        parent.addEventListener("click",(listc)=>{
+            listc.target.style.backgroundColor="pink"
+            console.log(listc.target.innerHTML)
+            show.innerHTML=`${listc.target.textContent} is clickerd`;
+            
+        })
+
+
+    </script>
+</body>
+</html>
